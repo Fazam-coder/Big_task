@@ -51,13 +51,13 @@ class Example(QWidget):
         self.image.setPixmap(self.pixmap)
 
     def keyPressEvent(self, event):
-        if event.key() == Qt.Key_PageUp:
-            if float(self.scale) < 21:
-                self.scale = str(float(self.scale) + 2)
-                print(self.scale)
         if event.key() == Qt.Key_PageDown:
+            if float(self.scale) < 21:
+                self.scale = str(float(self.scale) + 1)
+                print(self.scale)
+        if event.key() == Qt.Key_PageUp:
             if float(self.scale) > 1:
-                self.scale = str(float(self.scale) - 2)
+                self.scale = str(float(self.scale) - 1)
                 print(self.scale)
         self.update_image()
 
